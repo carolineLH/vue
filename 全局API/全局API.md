@@ -195,3 +195,16 @@ var myFilter = Vue.filter('my-filter')
 * 用法：
 
   全局注册一个混入，影响注册之后所有创建的每个 Vue 实例。插件作者可以使用混入，向组件注入自定义的行为。不推荐在应用代码中使用。
+
+
+# Vue.use( plugin )
+* 参数：
+
+  {Object | Function} plugin
+* 用法：
+
+安装 Vue.js 插件。如果插件是一个对象，必须提供 install 方法。如果插件是一个函数，它会被作为 install 方法。install 方法调用时，会将 Vue 作为参数传入。
+
+该方法需要在调用 new Vue() 之前被调用。
+
+当 install 方法被同一个插件多次调用，插件将只会被安装一次。
